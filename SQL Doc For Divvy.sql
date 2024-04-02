@@ -41,7 +41,7 @@ GROUP BY member_casual
 
 -- What's the average ride duration of paid members vs casual members?
   
-SELECT initcap(member_casual), AVG(ride_duration) AS Avg_Dur
+SELECT initcap(member_casual), AVG(ride_length) AS Avg_Dur
 FROM "Projects"."Q1_Divvy"
 WHERE member_casual IN ('member','casual')
 GROUP BY member_casual
