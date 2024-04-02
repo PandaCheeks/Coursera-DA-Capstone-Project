@@ -1,4 +1,5 @@
 -- 1. Set up table schema.
+
 ALTER TABLE "Projects"."Q1_Divvy"
 ADD ride_id text,
 ADD rideable_type text,
@@ -32,18 +33,21 @@ ADD COLUMN day_of_week text
 in general, and sorted by Member, and day of the week, and the amount of rides grouped by casual and paid members as well as day of week*/
 
 -- What's the number of paid members vs casual members?
+  
 SELECT initcap(member_casual),COUNT(member_casual) AS memcas 
 FROM "Projects"."Q1_Divvy"
 WHERE member_casual IN	('member','casual')
 GROUP BY member_casual
 
 -- What's the average ride duration of paid members vs casual members?
+  
 SELECT initcap(member_casual), AVG(ride_duration) AS Avg_Dur
 FROM "Projects"."Q1_Divvy"
 WHERE member_casual IN ('member','casual')
 GROUP BY member_casual
 
 -- How Many Trips are there Per day
+  
 SELECT day_of_week, count(*) AS n_trips
 FROM "Projects"."Q1_Divvy"
 WHERE member_casual IN('member','casual')
