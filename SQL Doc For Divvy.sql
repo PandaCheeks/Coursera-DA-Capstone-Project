@@ -37,7 +37,7 @@ FROM "Projects"."Q1_Divvy"
 WHERE member_casual IN	('member','casual')
 GROUP BY member_casual
 
---What's the average ride duration of paid members vs casual members?
+-- What's the average ride duration of paid members vs casual members?
 SELECT initcap(member_casual), AVG(ride_duration) AS Avg_Dur
 FROM "Projects"."Q1_Divvy"
 WHERE member_casual IN ('member','casual')
@@ -56,7 +56,7 @@ FROM "Projects"."Q1_Divvy"
 WHERE member_casual IN('member','casual')
 GROUP BY day_of_week
 
---Average Ride Duration Per day according to membership status
+-- Average Ride Duration Per day according to membership status
 
 SELECT initcap(member_casual),day_of_week,avg(ride_length) AS Avg_Dur
 FROM "Projects"."Q1_Divvy"
